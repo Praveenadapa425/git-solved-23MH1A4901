@@ -20,7 +20,7 @@ merge conflicts across multiple branches using proper Git workflows.
 | git branch | 10+ | View and manage branches |
 | git merge | 2 | Merge dev and conflict-simulator into main |
 | git add | 30+ | Stage resolved conflicts |
-| git commit | 15+ | Commit resolved changes |
+| git commit | 20+ | Commit resolved changes |
 | git push | 15+ | Push to my repository |
 | git fetch | 2 | Fetch updates from instructor |
 | git pull | 1 | Pull updates |
