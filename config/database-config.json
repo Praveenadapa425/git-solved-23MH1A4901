@@ -1,25 +1,41 @@
 {
+  "config_version": "3.0.0",
+  "active_profile": "production",
+  
   "production": {
     "connection": {
+      "type": "single",
       "host": "prod-db.example.com",
       "port": 5432,
       "database": "devops_production",
       "ssl_mode": "require",
-      "pool_size": 20
+      "pool_size": 20,
+      "timeout": 30
     },
     "backup": {
       "enabled": true,
+      "strategy": "scheduled",
       "schedule": "0 2 * * *",
-      "retention_days": 30
+      "retention_days": 30,
+      "location": "local",
+      "encryption": false
+    },
+    "monitoring": {
+      "slow_query_threshold": 1000,
+      "alert_on_anomaly": false,
+      "metrics_export": "none"
     }
   },
+  
   "development": {
     "connection": {
+      "type": "single",
       "host": "localhost",
       "port": 5432,
       "database": "devops_development",
       "ssl_mode": "disable",
-      "pool_size": 5
+      "pool_size": 5,
+      "timeout": 10
     },
     "backup": {
       "enabled": false,
@@ -28,6 +44,57 @@
     "features": {
       "seed_data": true,
       "debug_queries": true
+    },
+    "monitoring": {
+      "slow_query_threshold": 500,
+      "alert_on_anomaly": false,
+      "metrics_export": "console"
+    }
+  },
+  
+  "experimental": {
+    "enabled": false,
+    "connection": {
+      "type": "distributed",
+      "hosts": [
+        "node1.example.com",
+        "node2.example.com",
+        "node3.example.com"
+      ],
+      "port": 5432,
+      "database": "devops_experimental",
+      "username": "experimental_admin",
+      "ssl_mode": "verify-full",
+      "pool_size": 50,
+      "timeout": 60,
+      "connection_pooling": "pgbouncer",
+      "read_replicas": 5
+    },
+    "backup": {
+      "enabled": true,
+      "strategy": "continuous",
+      "schedule": "*/15 * * * *",
+      "retention_days": 90,
+      "location": "s3://backups/experimental",
+      "encryption": true,
+      "geo_redundancy": true
+    },
+    "replication": {
+      "enabled": true,
+      "replicas": 5,
+      "sync_mode": "semi-synchronous",
+      "multi_region": true,
+      "regions": ["us-east", "eu-west", "ap-south"]
+    },
+    "ai_optimization": {
+      "query_optimization": true,
+      "index_suggestions": true,
+      "auto_vacuum_ml": true
+    },
+    "monitoring": {
+      "slow_query_threshold": 100,
+      "alert_on_anomaly": true,
+      "metrics_export": "prometheus"
     }
   }
 }
