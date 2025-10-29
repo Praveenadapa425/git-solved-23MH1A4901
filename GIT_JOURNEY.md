@@ -21,7 +21,7 @@ merge conflicts across multiple branches using proper Git workflows.
 | git merge | 2 | Merge dev and conflict-simulator into main |
 | git add | 30+ | Stage resolved conflicts |
 | git commit | 15+ | Commit resolved changes |
-| git push | 10+ | Push to my repository |
+| git push | 15+ | Push to my repository |
 | git fetch | 2 | Fetch updates from instructor |
 | git pull | 1 | Pull updates |
 | git stash | 2 | Save temporary work |
@@ -29,7 +29,7 @@ merge conflicts across multiple branches using proper Git workflows.
 | git rebase | 1 | Rebase feature branch |
 | git reset | 3 | Undo commits (soft/mixed/hard) |
 | git revert | 1 | Safe undo |
-| git tag | 2 | Create release tags |
+| git tag | 3 | Create release tags |
 | git status | 50+ | Check repository state |
 | git log | 30+ | View history |
 | git diff | 20+ | Compare changes |
