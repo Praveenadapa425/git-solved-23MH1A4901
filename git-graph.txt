@@ -1,4 +1,12 @@
-* bab1858 (HEAD -> main, origin/main) docs: Add changelog
+* 4876136 (HEAD -> main, origin/main) docs: Regenerate CHANGELOG.md to include latest commits
+* 5bb55e7 docs(architecture): Add comparison table for clarity
+* fb9f459 Update GIT_JOURNEY.md with latest Git workflow notes
+* 176f331 Remove file 'h origin main' and sync with main branch
+* 9b52943 docs: Complete GIT_JOURNEY.md with all conflict resolutions
+* bc03841 Add an additional Git tag for version tracking
+* 1fc5122 Add GIT_JOURNEY.md documentation file
+* d685bfc (tag: v1.2.0) docs: Add final project artifacts
+* bab1858 docs: Add changelog
 * e6dfcb0 docs: Update README
 | * c5dbe3f (origin/feature/another-feature, feature/another-feature) feat: Add test feature
 | * 4df7fb7 docs: Update README
