@@ -5,6 +5,17 @@ DevOps Simulator follows a **microservices architecture** designed for high avai
 
 ⚠️ **Experimental features are cutting-edge and may be untested.**
 
+## Architecture at a Glance
+
+| Component | Production | Development | Experimental |
+| :--- | :--- | :--- | :--- |
+| **App Server** | Node.js + Express | Same + Hot Reload | + TensorFlow.js & Kafka |
+| **Database** | PostgreSQL (Master-Slave) | Single PostgreSQL Instance | 5-Node Cluster + Redis |
+| **Scaling** | Horizontal Auto-Scaling | Manual | Predictive AI Scaling |
+| **Monitoring** | Prometheus + Grafana | Console Logs | Thanos + ELK Stack + AI |
+| **Deployment** | Rolling Updates | Docker Compose | Multi-Cloud Canary |
+| **Security** | SSL + Access Controls | Relaxed | Zero-Trust Architecture |
+
 ## Components
 
 ### 1. Application Server
