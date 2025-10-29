@@ -82,7 +82,47 @@ merge conflicts across multiple branches using proper Git workflows.
 
 ### Merge 2: main + conflict-simulator (6 files)
 
-[Document the second set of conflicts similarly]
+#### Conflict 1: config/app-config.yaml
+- **Issue**: A stable production/development config conflicted with an experimental version adding advanced features like AI and multi-cloud support.
+- **Resolution**: I created a unified configuration file with a new `experimental_features` block, which is controlled by a master `enabled: false` flag.
+- **Strategy**: This approach keeps the production configuration safe and stable by default, while still preserving all the new experimental features in a structured, disabled state, ready for future testing.
+- **Difficulty**: Hard
+- **Time**: 25 minutes
+
+#### Conflict 2: config/database-config.json
+- **Issue**: A simple two-profile (production/dev) database config conflicted with an enterprise-grade distributed database setup.
+- **Resolution**: I restructured the JSON to have three distinct profiles: `production`, `development`, and `experimental`, each containing a complete and separate configuration.
+- **Strategy**: By creating separate profiles, the application can select the correct database setup for the environment. This keeps production simple while fully documenting the complex, scalable architecture for future use.
+- **Difficulty**: Hard
+- **Time**: 20 minutes
+
+#### Conflict 3: scripts/deploy.sh
+- **Issue**: A straightforward two-environment deploy script conflicted with a complex script for AI-powered, multi-cloud canary deployments.
+- **Resolution**: I merged them into a single, powerful script using an `if-elif-else` structure to create separate execution paths for `production`, `development`, and `experimental` environments.
+- **Strategy**: The script defaults to the safe `production` mode. The advanced experimental logic is completely isolated in its own block, ensuring that cutting-edge features do not interfere with stable, mission-critical deployments.
+- **Difficulty**: Hard
+- **Time**: 30 minutes
+
+#### Conflict 4: scripts/monitor.js
+- **Issue**: A standard monitoring script conflicted with an experimental version that added AI-powered predictive analysis and anomaly detection.
+- **Resolution**: I integrated the new AI features into the existing script but placed them inside conditional logic that is only activated if a `config.experimental_mode` flag is true.
+- **Strategy**: This enhances the script's capabilities without activating potentially unstable features by default, thereby maintaining backward compatibility while allowing for future innovation.
+- **Difficulty**: Medium
+- **Time**: 20 minutes
+
+#### Conflict 5: docs/architecture.md
+- **Issue**: Simple microservice documentation conflicted with a document describing a highly advanced, event-driven, multi-cloud architecture.
+- **Resolution**: I combined both documents into a single, unified file with clearly labeled sections for "Current Production Architecture" and "Experimental Architecture (Future Vision)".
+- **Strategy**: This creates a single source of truth that documents both the current, stable state of the system and provides a clear roadmap for its future evolution.
+- **Difficulty**: Easy
+- **Time**: 15 minutes
+
+#### Conflict 6: README.md
+- **Issue**: The standard project README conflicted with an experimental version focused on AI features.
+- **Resolution**: I created a new, unified README that includes my student info, a prominent `⚠️ Warning` section about experimental features, and combined feature lists and Quick Start guides for all three environments.
+- **Strategy**: The goal was to create a clear and honest "front page" for the project that serves both regular users and developers interested in the experimental features.
+- **Difficulty**: Medium
+- **Time**: 15 minutes
 
 ## Most Challenging Parts
 
