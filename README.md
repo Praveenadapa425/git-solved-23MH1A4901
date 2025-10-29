@@ -52,8 +52,3 @@ Our system now uses machine learning to:
 export DEPLOY_ENV=production
 ./scripts/deploy.sh
 
-
-
-
-## FAQ 
-update
